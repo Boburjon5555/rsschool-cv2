@@ -1,0 +1,260 @@
+:root {
+  --ink: #0f172a;
+  --surface: #16213b;
+  --surface-alt: #1c2b4a;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --accent: #f0b429;
+  --accent-dark: #b8860f;
+  --border: #2a3a5c;
+  --radius: 6px;
+  --max-width: 760px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--ink);
+  color: var(--text);
+  font-family: "Inter", system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-weight: 700;
+  color: var(--text);
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Header */
+
+.site-header {
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 1.5rem 0;
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.nav-list a:hover,
+.nav-list a:focus-visible {
+  color: var(--accent);
+}
+
+.profile {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  flex-shrink: 0;
+}
+
+.profile-text {
+  min-width: 0;
+}
+
+.role {
+  color: var(--accent);
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+}
+
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.contact-label {
+  color: var(--text);
+  font-weight: 500;
+  margin-right: 0.3rem;
+}
+
+/* Main content */
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--text);
+}
+
+.card p + p {
+  margin-top: 0.75rem;
+}
+
+.skills-list,
+.education-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.skills-list li {
+  background-color: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.9rem;
+}
+
+.education-list li {
+  width: 100%;
+  padding: 0.4rem 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+.education-list li:last-child {
+  border-bottom: none;
+}
+
+.projects-list {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.projects-list li + li {
+  margin-top: 0.75rem;
+}
+
+pre {
+  background-color: var(--ink);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1rem 0 0;
+}
+
+code {
+  font-family: "JetBrains Mono", "Courier New", monospace;
+  font-size: 0.85rem;
+  color: #d1fae5;
+}
+
+/* Footer */
+
+.site-footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.footer-logo {
+  display: block;
+  vertical-align: middle;
+}
+
+.footer-year {
+  color: var(--muted);
+}
+
+/* Responsive */
+
+@media (max-width: 480px) {
+  .profile {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-list {
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+}
